@@ -28,7 +28,6 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 }
 
 func getAllQuestions(w http.ResponseWriter, r *http.Request) {
-
 	questions := Questions{
 		Question{
 			Id:   0,
@@ -182,14 +181,19 @@ func getAllQuestions(w http.ResponseWriter, r *http.Request) {
 		},
 	}
 	fmt.Println("Endpoint questions (GET) hit")
+	enableCors(&w)
 	json.NewEncoder(w).Encode(questions)
 }
 
 func handleRequests() {
 	router := mux.NewRouter().StrictSlash(true)
 	router.HandleFunc("/", homePage)
-	router.HandleFunc("/question/all", getAllQuestions)
+	router.HandleFunc("/question/all", getAllQuestions).Methods("GET")
 	log.Fatal(http.ListenAndServe(":8081", router))
+}
+
+func enableCors(w *http.ResponseWriter) {
+	(*w).Header().Set("Access-Control-Allow-Origin", "*")
 }
 
 func main() {
