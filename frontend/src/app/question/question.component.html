@@ -1,0 +1,17 @@
+<div style="width: 50%; margin: 0 auto;">
+  <mat-card>
+    <table>
+      <ng-container *ngFor="let question of questions">
+        <tr style="text-align: left">
+          <th><span>{{question.text}}</span></th>
+        </tr>
+        <tr *ngFor="let answer of question.answers">
+          <td><mat-checkbox color="primary"></mat-checkbox>{{answer.text}}</td>
+        </tr>
+      </ng-container>
+    </table>
+  </mat-card>
+  <div style="text-align: center;">
+    <button mat-raised-button color="primary" style="margin-top: 10px;">Send</button>
+  </div>
+</div>
