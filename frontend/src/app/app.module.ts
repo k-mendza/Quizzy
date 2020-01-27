@@ -6,6 +6,7 @@ import { QuestionComponent } from './question/question.component';
 import { HttpClientModule } from '@angular/common/http';
 import {QuestionService} from './question/question.service';
 import {MatButtonModule, MatCardModule, MatCheckboxModule} from '@angular/material';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {MatButtonModule, MatCardModule, MatCheckboxModule} from '@angular/materi
     HttpClientModule,
     MatCardModule,
     MatCheckboxModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
   ],
   providers: [QuestionService],
   bootstrap: [AppComponent]

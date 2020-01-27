@@ -6,7 +6,7 @@
           <th><span>{{question.text}}</span></th>
         </tr>
         <tr *ngFor="let answer of question.answers">
-          <td><mat-checkbox color="primary"></mat-checkbox>{{answer.text}}</td>
+          <td><mat-checkbox color="primary" [(ngModel)]="answer.isSelected">{{answer.text}}</mat-checkbox></td>
         </tr>
       </ng-container>
     </table>
