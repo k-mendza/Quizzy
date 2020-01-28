@@ -18,9 +18,13 @@ export class QuestionComponent implements OnInit {
 
   getQuestions() {
     this.questionService.getQuestions().subscribe(data => {
-      for (const obj of (data as any)) {
+      for (const obj of data) {
         this.questions.push(new Question(obj.id, obj.text, obj.answers));
       }
     });
+  }
+
+  onSend() {
+    console.log(this.questions);
   }
 }

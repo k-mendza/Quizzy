@@ -10,8 +10,8 @@ import (
 
 type Answer struct {
 	Id         int64  `json:"id"`
-	QuestionId int64  `json:"question_id"`
-	IsSelected bool   `json:"is_selected"`
+	QuestionId int64  `json:"questionId"`
+	IsSelected bool   `json:"isSelected"`
 	Text       string `json:"text"`
 }
 
@@ -24,7 +24,7 @@ type Question struct {
 type Questions []Question
 
 func homePage(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("Endpoint hit: \"/\" (homePage)")
+	fmt.Println("Endpoint hit: (GET) \"/\" (homePage)")
 }
 
 func getAllQuestions(w http.ResponseWriter, r *http.Request) {
@@ -180,7 +180,7 @@ func getAllQuestions(w http.ResponseWriter, r *http.Request) {
 			},
 		},
 	}
-	fmt.Println("Endpoint questions (GET) hit")
+	fmt.Println("Endpoint hit: (GET) \"/questions/all\"")
 	enableCors(&w)
 	json.NewEncoder(w).Encode(questions)
 }
