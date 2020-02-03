@@ -25,6 +25,6 @@ export class QuestionComponent implements OnInit {
   }
 
   onSend() {
-    console.log(this.questions);
+    this.questionService.verifyQuestions(this.questions);
   }
 }
