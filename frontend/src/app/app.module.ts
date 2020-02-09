@@ -7,11 +7,13 @@ import { HttpClientModule } from '@angular/common/http';
 import {QuestionService} from './question/question.service';
 import {MatButtonModule, MatCardModule, MatCheckboxModule} from '@angular/material';
 import {FormsModule} from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuestionComponent
+    QuestionComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
